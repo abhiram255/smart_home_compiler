@@ -1,0 +1,8 @@
+sensor temperature: number max_age 5;
+device heater: switch;
+
+rule keep_warm {
+  when temperature < 10 + 8;
+  then heater.on;
+  on_fault heater.off;
+}
